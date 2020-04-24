@@ -1,6 +1,7 @@
 import React from 'react';
+import Layout from './hoc/layout/Layout';
 
 
-const App = () => <h2>App Component</h2>
+const App = () => <Layout />
 
 export default App;
