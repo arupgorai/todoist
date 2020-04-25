@@ -4,22 +4,21 @@ import NavItem from './NavItem/NavItem';
 
 const Nav = styled.nav`
     display: flex;
-    height: 100%;
+    margin-top: ${props => (props.mobile ? '-6rem' : null)};
 `;
 const Ul = styled.ul`
     display: flex;
+    flex-direction: ${props => props.mobile ? 'column' : 'row'};
     align-items: center;
     height: 100%;
 `;
 
-const NavItems = () => {
+const NavItems = ({ mobile, clicked }) => {
     return (
-        <Nav>
-            <Ul>
-                <NavItem>Home</NavItem>
-                <NavItem>About</NavItem>
-                <NavItem>Gallery</NavItem>
-                <NavItem>Contact</NavItem>
+        <Nav mobile={mobile}>
+            <Ul mobile={mobile}>
+                <NavItem mobile={mobile} clicked={clicked} link="/">Home</NavItem>
+                <NavItem mobile={mobile} clicked={clicked} link="/todos">Todos</NavItem>
             </Ul>
         </Nav>
     )
